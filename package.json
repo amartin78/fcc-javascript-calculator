@@ -2,7 +2,7 @@
   "name": "fcc-javascript-calculator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://amartin78/github.io/fcc-javascript-calculator/",
+  "homepage": "https://amartin78.github.io/fcc-javascript-calculator/",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
