@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/fcc-javascript-calculator/static/css/main.34de6062.chunk.css",
-    "main.js": "/github.io/fcc-javascript-calculator/static/js/main.6b58049b.chunk.js",
-    "main.js.map": "/github.io/fcc-javascript-calculator/static/js/main.6b58049b.chunk.js.map",
-    "runtime~main.js": "/github.io/fcc-javascript-calculator/static/js/runtime~main.82f4e6bf.js",
-    "runtime~main.js.map": "/github.io/fcc-javascript-calculator/static/js/runtime~main.82f4e6bf.js.map",
-    "static/js/2.36fe20d8.chunk.js": "/github.io/fcc-javascript-calculator/static/js/2.36fe20d8.chunk.js",
-    "static/js/2.36fe20d8.chunk.js.map": "/github.io/fcc-javascript-calculator/static/js/2.36fe20d8.chunk.js.map",
-    "index.html": "/github.io/fcc-javascript-calculator/index.html",
-    "precache-manifest.d16a061f58f5a87cf0baefe0b9c47190.js": "/github.io/fcc-javascript-calculator/precache-manifest.d16a061f58f5a87cf0baefe0b9c47190.js",
-    "service-worker.js": "/github.io/fcc-javascript-calculator/service-worker.js",
-    "static/css/main.34de6062.chunk.css.map": "/github.io/fcc-javascript-calculator/static/css/main.34de6062.chunk.css.map"
+    "main.css": "/fcc-javascript-calculator/static/css/main.34de6062.chunk.css",
+    "main.js": "/fcc-javascript-calculator/static/js/main.6b58049b.chunk.js",
+    "main.js.map": "/fcc-javascript-calculator/static/js/main.6b58049b.chunk.js.map",
+    "runtime~main.js": "/fcc-javascript-calculator/static/js/runtime~main.dc31ec86.js",
+    "runtime~main.js.map": "/fcc-javascript-calculator/static/js/runtime~main.dc31ec86.js.map",
+    "static/js/2.36fe20d8.chunk.js": "/fcc-javascript-calculator/static/js/2.36fe20d8.chunk.js",
+    "static/js/2.36fe20d8.chunk.js.map": "/fcc-javascript-calculator/static/js/2.36fe20d8.chunk.js.map",
+    "index.html": "/fcc-javascript-calculator/index.html",
+    "precache-manifest.10da27e1cb987f2b0ec81c494a2010b5.js": "/fcc-javascript-calculator/precache-manifest.10da27e1cb987f2b0ec81c494a2010b5.js",
+    "service-worker.js": "/fcc-javascript-calculator/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/fcc-javascript-calculator/static/css/main.34de6062.chunk.css.map"
   }
 }
