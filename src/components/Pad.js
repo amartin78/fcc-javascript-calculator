@@ -27,9 +27,11 @@ function Buttons()  {
 }
 
 export default class Pad extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    constructor(props) {
+        super(props);
+
+        
+    }
 
     render() {
 
