@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Display from './components/Display'
-import Pad from './components/Pad'
+
+import Calculator from './components/Calculator'
 
 
-class Main extends React.Component {
+export default class Main extends React.Component {
 
     render() {
         return (
-            <div id="calculator">
-                <Display />
-                <Pad />
-            </div>
-        );
+            <React.Fragment>
+                <Calculator />
+            </React.Fragment>
+        )
     }
 }
 
