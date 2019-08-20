@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,2BACE,QAAS,CACT,WAAY,CACZ,UACF,CAEA,YACE,YAAa,CACb,sBAAuB,CACvB,kBACF","file":"main.1a313435.chunk.css","sourcesContent":["html, body, #app, #calculator {\n  margin: 0;\n  height: 100%;\n  width: 100%;\n}\n\n#calculator {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}"]}
