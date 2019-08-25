@@ -80,6 +80,14 @@ button:hover {
     width: 12rem;
   }
 
+  button {
+    font-size: 1.2rem;
+    color: white;
+    background: #7781aa;
+    border: none;
+    border-radius: 5px;
+  }
+
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.55fr 1fr 1fr 1fr 1fr 1fr;
@@ -94,10 +102,8 @@ button:hover {
   
   #display {
     grid-area: 1/1/2/5;
-    /* grid-area: display; */
     width: auto;
   }
-
   #clear {
     grid-area: clear
   }
@@ -110,8 +116,6 @@ button:hover {
   #divide {
     grid-area: divide
   }
-
-
   #seven {
     grid-area: seven
   }
@@ -124,8 +128,6 @@ button:hover {
   #multiply {
     grid-area: multiply
   }
-
-
   #four {
     grid-area: four
   }
@@ -138,8 +140,6 @@ button:hover {
   #subtract {
     grid-area: subtract
   }
-
-
   #one {
     grid-area: one
   }
@@ -152,8 +152,6 @@ button:hover {
   #add {
     grid-area: add
   }
-
-
   #zero {
     grid-area: zero
   }
@@ -162,14 +160,6 @@ button:hover {
   }
   #equals {
     grid-area: equals
-  }
- 
-  button {
-    font-size: 1.2rem;
-    color: white;
-    background: #7781aa;
-    border: none;
-    border-radius: 5px;
   }
 }
 
