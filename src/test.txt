@@ -1,66 +1,47 @@
 
+-- if number is zero and = is entererd no operation is done
+    e.g. = => 0
 
+--  if negative sign pressed followed by decimal point it should display point preceded by zero
+    e.g. - .   => -0.
+         - . 6 => -0.6
 
-if input is percent operator
+-- if a number is entered and inmediatly equals is pressed, it returns that number
+    e.g.  6  = =>  6
+         -8  = => -8
 
-    number is product of 0.01 (eg 640 from 3200 20%)
-    store last numbered entered multiplied by 0.01
-    last operator performs between
+-- if a number followed by % operation and equals is entered it should return the result
+    e.g. 8% = => 0.08
 
-    %
-    num2 times 0.01 times num1
-    store in percent
-    update amount in screen
-    =
-    getResult(this.fullInput)
+-- if square root operand is entered followed by a number and equals operator it should return the result
+    e.g.  √9   = =>  3
+         -√81  = => -9
+          √-36 = => Error
 
+-- if square root operation is followed by another operation it should return the result
+    e.g. √36 + 2 = 8
 
-
-
-
-
-
-
-if input is operator
-
-    store number in array
-
-    if operator is plus or minus  
-        - or - if operator is product or division and last operator as well
-        get result
-        update amount in screen
-        keep a copy of result in numberCp
-
-
-    store operator in array
-    set number to empty value
-   
-
-
-else if input is equals
-
-
-else if input is clear
-
-
-else if input is a number
-    store input in number
-    keep a copy of number in numberCp
-    update amount in screen
-
-
-
-
-
-
----->>>>>  3 + 6 = 9 - 2 = 9 Error!
-
-
-
--- if no operand is received then it must take the first value intruduced
+-- if no number is entered then it must return the first value intruduced
    (no empty values should be introduced)
-    e.g. 8 + =  => 8 + '8' = 16
-         7 * =  => 7 * '7' = 49
+    e.g. 8 + =  => 8 + 8 = 16
+         7 * =  => 7 * 7 = 49
+         -6 / = => -6 / -6 = 1
+
+-- Pressing an operator inmediatly following equals should start a new calculation based on the previous 
+   evaluation
+   e.g. 3 + 6 = 9 + 2 => 12
+        3 + 6 = 9 - 2 =>  7
+
+-- Pressing equals after an operation should repeat the last calculation
+    e.g. 3 (+ 6) = 9 = => 15 = => 21 = => 27
+         7 (* -3) = -21 = => 63 = => -189
+
+-- If an operand (+ - * / % =) is pressed with no number entered, it should return 0
+
+        
+
+
+        
 
 
 

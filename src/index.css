@@ -2,7 +2,7 @@ html, body, #app {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: Iceland, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: #DFE2DB;
 }
 
@@ -10,6 +10,11 @@ html, body, #app {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@font-face {
+  font-family: 'digital';
+  src: url('../src/fonts/Calculator.ttf');
 }
 
 .container {
@@ -25,9 +30,10 @@ html, body, #app {
 }
 
 #display {
+  font-family: 'digital';
   width: 18rem;
   grid-area: 1/1/2/6;
-  font-size: 2.1rem;
+  font-size: 2.5rem !important;
   padding: 0.2rem 1.1rem;
   border-radius: 5px;
   border: 4px solid #7781aa;
@@ -51,6 +57,7 @@ input, button {
 }
 
 button {
+  font-family: 'digital';
   font-size: 1.2rem;
   color: white;
   background: #7781aa;
