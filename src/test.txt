@@ -1,0 +1,72 @@
+
+
+
+if input is percent operator
+
+    number is product of 0.01 (eg 640 from 3200 20%)
+    store last numbered entered multiplied by 0.01
+    last operator performs between
+
+    %
+    num2 times 0.01 times num1
+    store in percent
+    update amount in screen
+    =
+    getResult(this.fullInput)
+
+
+
+
+
+
+
+
+if input is operator
+
+    store number in array
+
+    if operator is plus or minus  
+        - or - if operator is product or division and last operator as well
+        get result
+        update amount in screen
+        keep a copy of result in numberCp
+
+
+    store operator in array
+    set number to empty value
+   
+
+
+else if input is equals
+
+
+else if input is clear
+
+
+else if input is a number
+    store input in number
+    keep a copy of number in numberCp
+    update amount in screen
+
+
+
+
+
+
+---->>>>>  3 + 6 = 9 - 2 = 9 Error!
+
+
+
+-- if no operand is received then it must take the first value intruduced
+   (no empty values should be introduced)
+    e.g. 8 + =  => 8 + '8' = 16
+         7 * =  => 7 * '7' = 49
+
+
+
+
+
+
+
+
+

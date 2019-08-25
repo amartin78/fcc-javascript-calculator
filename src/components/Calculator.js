@@ -3,27 +3,25 @@ import React from 'react'
 
 function Elements(props) {
 
-        const buttons = [
-            ['seven', '7'], ['eight', '8'], ['nine', '9'], 
-            ['clear', 'clear', 'C'], ['four', '4'], ['five', '5'], ['six', '6'],
-            ['multiply', '*'], ['divide', '/'], ['equals', '='], ['one', '1'], ['two', '2'],
-            ['three', '3'], ['add', '+'], ['zero', '0'], ['decimal', '.'], ['subtract', '-']
-
-        ]
-            
-
-        return (
-            <React.Fragment>
-                <input id="display" className='text-right' type="input" value={props.amount} readOnly></input>
-                {
-                    buttons.map((b) => 
-                        <button id={b[0]} key={b[0]} onClick={props.onClick()} value={b[1]}>
-                            {b[1]==='clear'?b[2]:b[1]}
-                        </button>
-                    )
-                }
-            </React.Fragment>
-        )
+    const buttons = [
+        ['seven', '7'], ['eight', '8'], ['nine', '9'],  ['percent', '%'], ['clear', 'clear', 'C'],
+        ['four', '4'], ['five', '5'], ['six', '6'], ['multiply', '*'], ['divide', '/'],
+        ['one', '1'], ['two', '2'], ['three', '3'], ['add', '+'],['subtract', '-'],
+        ['zero', '0'], ['decimal', '.'],  ['square-root', '√', '√'], ['equals', '='],
+    ]
+        
+    return (
+        <React.Fragment>
+            <input id="display" className='text-right' type="input" value={props.amount} readOnly></input>
+            {
+                buttons.map((b) => 
+                    <button id={b[0]} key={b[0]} onClick={props.onClick()} value={b[1]}>
+                        {b[1]==='clear' | b[1]==='square-root'?b[2]:b[1]}
+                    </button>
+                )
+            }
+        </React.Fragment>
+    )
 }
 
 export default class Calculator extends React.Component {
@@ -34,6 +32,7 @@ export default class Calculator extends React.Component {
         this.fullInput = []
         this.number = ''
         this.numberCp = ''
+        this.equals = false
 
         this.state = {
             amount: 0
@@ -46,38 +45,78 @@ export default class Calculator extends React.Component {
 
         let input = event.target.value
 
-        if (input === '/' | input === '*' | input === '+' | input === '-' ) {
-            if (this.number === '' | this.number === '-') {
+        if (input === '%') {
+            let num1 = this.fullInput[this.fullInput.length - 2]
+            if (num1 === undefined) {
+                num1 = 1
+            }
+            let percent = num1 * this.number * 0.01   
+            this.setState({amount: percent})
+            this.number = percent
+        } else if (input === '/' | input === '*' | input === '+' | input === '-' ) {
+            console.log('fullinput ', this.fullInput)
+            if ((this.number === '' | this.number === '-') & (!this.equals)) {
                 if(input === '-') {
-                    this.number = this.number + input
+                    this.number = this.validate(this.number, input)
                     this.setState({amount: this.number})
                 } else {
+                    console.log('plus sign and number is empty', this.number)
                     this.fullInput.splice(-1, 1, input)
                     this.number = ''
                     this.setState({amount: this.numberCp})
+                    console.log(this.fullInput)
                 }
             } else {
+                if (this.number.toString().indexOf('√') !== -1) {
+                    this.number = Math.sqrt(this.number.slice(1))
+                }
                 this.fullInput.push(this.number)
-                if (input === '+' | input === '-' ) {
-                    if (this.fullInput.length > 2) {
-                        let result = this.getResult(this.fullInput)
-                        this.setState({amount: result})
-                        this.numberCp = result
-                    }
+                let sign = this.fullInput[this.fullInput.length - 2]
+
+                if (((input === '+' | input === '-' ) & (this.fullInput.length > 2))
+                    |  (sign === '*' | sign === '/')) {
+                    let result = this.getResult(this.fullInput)
+                    this.setState({amount: result})
+                    this.numberCp = result
                 }
                 this.fullInput.push(input)
                 this.number = ''
             }
+            this.equals = false
         } else if (input === '=') {
+            let result = ''
+            let last = this.fullInput[this.fullInput.length - 2]
+            this.equals = true
+
+            if (this.number === '') {
+                this.number = last
+            }
+
+            if (this.number.toString().indexOf('√') !== -1) {
+                this.number = Math.sqrt(this.number.slice(1))
+            }
+
             this.fullInput.push(this.number)
-            let result = this.getResult(this.fullInput)
-            this.setState({amount: result})
-            input = ''
-            this.number = ''
-            this.fullInput.push(result)
+
+            if (this.number !== '') {
+                result = this.getResult(this.fullInput)
+
+
+                this.fullInput.push(result)
+
+
+
+
+                this.setState({amount: result})
+                this.numberCp = result
+                input = ''
+                this.number = ''
+                console.log('after equals ', this.fullInput)
+            } 
         } else if (input === 'clear') {
             input = ''
             this.number = ''
+            this.numberCp = ''
             this.fullInput = []
             this.setState({amount: 0})
         } else {   
@@ -85,11 +124,9 @@ export default class Calculator extends React.Component {
             this.numberCp = this.number
             this.setState({amount: this.number})
         }
-        
     }
 
     validate = (a, c) => {
-
         let str= ''
 
         if (a === '0' && c === '0') {
@@ -97,6 +134,8 @@ export default class Calculator extends React.Component {
         } else if (a === '' && c === '.') {
             return '0.'
         } else if (c === '.' && a.toString().indexOf('.') !== -1) {
+            str = a
+        } else if (c === '-' && a.toString().indexOf('-') !== -1) { 
             str = a
         } else {
             str = a + c
@@ -106,6 +145,7 @@ export default class Calculator extends React.Component {
     }
 
     calculation = (num1, ope, num2) => {
+                
         num1 = parseFloat(num1)
         num2 = parseFloat(num2)
 
@@ -118,6 +158,8 @@ export default class Calculator extends React.Component {
                 return num1 + num2
             case '-':
                 return num1 - num2
+            case '√':
+                return Math.sqrt(num1)
             default:
                 return ''
         }
@@ -136,7 +178,9 @@ export default class Calculator extends React.Component {
                 }
             })
         }
-        return input[0]
+        let result = input[0]
+
+        return isNaN(result)?'Error':result.toString().length>10?result.toString().slice(0,10):result
     }
 
     render() {

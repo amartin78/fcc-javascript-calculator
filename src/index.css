@@ -2,7 +2,7 @@ html, body, #app {
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Iceland, Verdana, Geneva, Tahoma, sans-serif;
   background: #DFE2DB;
 }
 
@@ -13,16 +13,22 @@ html, body, #app {
 }
 
 .container {
-  height: 35vh;
   padding: 0.5rem;
   background: #08163a;
   border-radius: 5px;
 }
 
+.grid {
+  display: grid;
+  grid-template-rows: 1.55fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.25rem;
+}
+
 #display {
+  width: 18rem;
   grid-area: 1/1/2/6;
   font-size: 2.1rem;
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 1.1rem;
   border-radius: 5px;
   border: 4px solid #7781aa;
   margin-bottom: 2px;
@@ -36,22 +42,12 @@ input, button {
   text-align: right;
 }
 
+#clear {
+  background: #b71010;
+}
+
 #zero {
   grid-area: 5/1/6/3;
-}
-
-#clear {
-  grid-area: 2/4/3/6
-}
-
-#equals {
-  grid-area: 4/5/6/6;
-}
-
-.grid {
-  display: grid;
-  grid-template-rows: 1.4fr 1fr 1fr 1fr 1fr;
-  grid-gap: 0.3rem;
 }
 
 button {
@@ -62,12 +58,53 @@ button {
   border-radius: 5px;
 }
 
-#add, #subtract, #multiply, #divide, #equals {
+button:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+#add, #subtract, #multiply, #divide, #equals, #percent, #square-root {
   background: #666;
 }
 
-#clear {
-  background: #b71010;
+@media (max-width: 520px) {
+
+  .container {
+    width: 12rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1.55fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  
+  #display {
+    grid-area: 1/1/2/5;
+  }
+
+  #divide {
+    grid-area: 3/4/4/5;
+  }
+
+  #zero {
+    grid-area: 6/1/7/3;
+  }
+  
+  #clear {
+    grid-area: 2/4/3/5
+  }
+  
+  #equals {
+    grid-area: 5/4/7/5;
+  }
+
+  button {
+    font-size: 1.2rem;
+    color: white;
+    background: #7781aa;
+    border: none;
+    border-radius: 5px;
+  }
 }
 
 
