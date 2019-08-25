@@ -5,7 +5,7 @@ export function calculation(num1, ope, num2) {
     num2 = parseFloat(num2)
 
     switch(ope) {
-        case '/':
+        case '÷':
             return num1 / num2
         case 'X':
             return num1 * num2

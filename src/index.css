@@ -83,28 +83,87 @@ button:hover {
   .grid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1.55fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "display display display display"
+      "clear percent sroot divide"
+      "seven eight nine multiply"
+      "four five six subtract"
+      "one two three add"
+      "zero zero decimal equals"
   }
   
   #display {
     grid-area: 1/1/2/5;
+    /* grid-area: display; */
+    width: auto;
   }
 
-  #divide {
-    grid-area: 3/4/4/5;
+  #clear {
+    grid-area: clear
   }
+  #percent {
+    grid-area: percent
+  }
+  #square-root {
+    grid-area: sroot
+  }
+  #divide {
+    grid-area: divide
+  }
+
+
+  #seven {
+    grid-area: seven
+  }
+  #eight {
+    grid-area: eight
+  }
+  #nine {
+    grid-area: nine
+  }
+  #multiply {
+    grid-area: multiply
+  }
+
+
+  #four {
+    grid-area: four
+  }
+  #five {
+    grid-area: five
+  }
+  #six {
+    grid-area: six
+  }
+  #subtract {
+    grid-area: subtract
+  }
+
+
+  #one {
+    grid-area: one
+  }
+  #two {
+    grid-area: two
+  }
+  #three {
+    grid-area: three
+  }
+  #add {
+    grid-area: add
+  }
+
 
   #zero {
-    grid-area: 6/1/7/3;
+    grid-area: zero
   }
-  
-  #clear {
-    grid-area: 2/4/3/5
+  #decimal {
+    grid-area: decimal
   }
-  
   #equals {
-    grid-area: 5/4/7/5;
+    grid-area: equals
   }
-
+ 
   button {
     font-size: 1.2rem;
     color: white;

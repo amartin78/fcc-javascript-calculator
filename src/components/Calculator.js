@@ -6,11 +6,11 @@ function Elements(props) {
 
     const buttons = [
         ['seven', '7'], ['eight', '8'], ['nine', '9'],  ['percent', '%'], ['clear', 'clear', 'C'],
-        ['four', '4'], ['five', '5'], ['six', '6'], ['multiply', 'X'], ['divide', '/'],
+        ['four', '4'], ['five', '5'], ['six', '6'], ['multiply', 'X'], ['divide', '÷'],
         ['one', '1'], ['two', '2'], ['three', '3'], ['add', '+'],['subtract', '-'],
         ['zero', '0'], ['decimal', '.'],  ['square-root', '√', '√'], ['equals', '='],
     ]
-        
+
     return (
         <React.Fragment>
             <input id="display" className='text-right' type="input" value={props.amount} readOnly></input>
@@ -54,7 +54,7 @@ export default class Calculator extends React.Component {
         if (input === '%') {
             this.percent(input)
 
-        } else if (input === '/' | input === 'X' | input === '+' | input === '-' ) {
+        } else if (input === '÷' | input === 'X' | input === '+' | input === '-' ) {
 
             
             if (this.number === '' & this.state.amount === 0 & input !== '-') {
@@ -173,7 +173,7 @@ export default class Calculator extends React.Component {
 
         let sign = this.fullInput[this.fullInput.length - 2]
         if (((input === '+' | input === '-' ) & (this.fullInput.length > 2))
-            |  (sign === 'X' | sign === '/')) {
+            |  (sign === 'X' | sign === '÷')) {
             let result = this.getResult(this.fullInput)
             this.setState({amount: result})
             this.numberCp = result
@@ -186,7 +186,7 @@ export default class Calculator extends React.Component {
     }
 
     getResult = (input) => {
-        const symbols = [['/', 'X'], ['+', '-']]
+        const symbols = [['÷', 'X'], ['+', '-']]
         const inputCp = input.slice(0)
 
         for(let i=0; i<symbols.length; i++) {
