@@ -56,7 +56,6 @@ export default class Calculator extends React.Component {
 
         } else if (input === '÷' | input === 'X' | input === '+' | input === '-' ) {
 
-            
             if (this.number === '' & this.state.amount === 0 & input !== '-') {
                 return 0
             } 
@@ -65,7 +64,7 @@ export default class Calculator extends React.Component {
             else if ((this.number === '' | this.number === '-' | this.number === '√') ){
                 this.consecutiveOpe(input)
                 
-            } else { // if operation follows a normal sequence 
+            } else { // if an operator is pressed after a number is entered
                 this.normalOpe(input)
 
             }
@@ -98,10 +97,10 @@ export default class Calculator extends React.Component {
 
     percent = (input) => {
         let num1 = this.fullInput[this.fullInput.length - 2]
+
         if (this.number === '') {
             return 0
         }
-
         if (num1 === undefined) {
             num1 = 1
         }
